@@ -1,6 +1,7 @@
 version: '3'
 
 services:
+  # backend
   backend:
     container_name: backend
     build:
@@ -12,15 +13,18 @@ services:
       - 8080:8080
     environment:
       - MODE=dev
-
-  # frontend:
-  #   container_name: frontend
-  #   build:
-  #     context: ./docker
-  #     dockerfile: frontend.dockerfile
-  #   volumes:
-  #     - ./frontend:/frontend
-  #   ports:
-  #     - 3000:3000
-  #   environment:
-  #     - MODE=dev
+  
+  # frontend
+  frontend:
+    container_name: frontend
+    build:
+      context: ./docker
+      dockerfile: frontend.dockerfile
+    volumes:
+      - ./frontend:/frontend
+    ports:
+      - 3000:3000
+    environment:
+      - MODE=dev
+    depends_on:
+      - backend
