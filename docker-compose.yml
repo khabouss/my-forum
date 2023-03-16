@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  # # backend ---------------------------------------------
+  # backend ---------------------------------------------
   backend:
     container_name: backend
     build:
@@ -14,7 +14,7 @@ services:
     environment:
       - MODE=dev
   
-  # # frontend --------------------------------------------
+  # frontend --------------------------------------------
   frontend:
     container_name: frontend
     build:
