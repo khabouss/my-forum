@@ -41,6 +41,7 @@ services:
       - es-net
     ports:
       - 9200:9200
+  #kibana
   kibana:
     container_name: kb-container
     image: docker.elastic.co/kibana/kibana:7.11.0
