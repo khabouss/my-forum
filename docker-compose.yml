@@ -1,14 +1,26 @@
 version: '3'
 
 services:
-  frontend:
-    container_name: frontend
+  backend:
+    container_name: backend
     build:
       context: ./docker
-      dockerfile: frontend.dockerfile
+      dockerfile: backend.dockerfile
     volumes:
-      - ./frontend:/frontend
+      - ./backend:/backend
     ports:
-      - 3000:3000
+      - 8080:8080
     environment:
-      - MODE=prod
+      - MODE=dev
+
+  # frontend:
+  #   container_name: frontend
+  #   build:
+  #     context: ./docker
+  #     dockerfile: frontend.dockerfile
+  #   volumes:
+  #     - ./frontend:/frontend
+  #   ports:
+  #     - 3000:3000
+  #   environment:
+  #     - MODE=dev
