@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: ./docker
+      dockerfile: frontend.dockerfile
+    volumes:
+      - ./frontend:/frontend
+    ports:
+      - 3000:3000
+    environment:
+      - MODE=prod
